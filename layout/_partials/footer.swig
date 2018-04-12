@@ -5,12 +5,13 @@
   <span class="with-love">
     <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
+  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright}}</span>
+  <span class="post-count">博客全站共{{ totalcount(site) }}字</span>
 
   {% if theme.post_wordcount.totalcount %}
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      本站访问量：
     </span>
     {% if theme.post_wordcount.item_text %}
       <span class="post-meta-item-text">{{ __('post.totalcount') }}&#58;</span>
@@ -21,11 +22,6 @@
   {% endif %}
 </div>
 
-{% if theme.footer.powered %}
-  <div class="powered-by">{#
-  #}{{ __('footer.powered', '<a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>') }}{#
-#}</div>
-{% endif %}
 
 {% if theme.footer.powered and theme.footer.theme.enable %}
   <span class="post-meta-divider">|</span>
